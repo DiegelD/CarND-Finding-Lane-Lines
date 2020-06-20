@@ -26,20 +26,20 @@ The pipeline contains six steps, to detect the lines.
 1. Then the image gets converted into grey scale to reduce the image information.
 <img src="test_images_output/whiteCarLaneSwitch.jpg_img_grey.png width="480" alt="Combined Image" />
 
-2. In order to create smoother further lines a gussian filter is applied (kernel size=3)
+2. In order to create smoother further lines a gussian filter is applied (kernel size=3).
 <img src="test_images_output/whiteCarLaneSwitch.jpg_Gaussian_smoothing.png" width="480" alt="Combined Image" />
 
-3. It follows a canny edge detection with the parameters (low_thresh=60, high_thresh=200 )
+3. It follows a canny edge detection with the parameters (low_thresh=60, high_thresh=200 ).
 <img src="test_images_output/whiteCarLaneSwitch.jpg_Canny.png" width="480" alt="Combined Image" />
 
-4. To catch the interesting region a mask with the parameter ([(0,imshape[0]),(420, 330), (580, 330), (imshape[1],imshape[0])]]) is applied
+4. To catch the interesting region a mask with the parameter ([(0,imshape[0]),(420, 330), (580, 330), (imshape[1],imshape[0])]]) is applied.
 <img src="test_images_output/solidWhiteCurve.jpg_Mask.png" width="480" alt="Combined Image" />
 
 5. In the masked area now the lines getting detected. 
 This is happened by transforming into the Hough Space and detecting there the lines. This space is the most common space to detect lines, because the line detection can be independent applied from the light conditions. 
 <img src="test_images_output/whiteCarLaneSwitch.jpg_Run_Hough_transform.png" width="480" alt="Combined Image" />
 
-6. Final, the detected lines get drawn into the original image
+6. Final, the detected lines get drawn into the original image.
 <img src="test_images_output/whiteCarLaneSwitch.jpg" width="480" alt="Combined Image" />
 
  Identify any shortcomings
@@ -48,7 +48,7 @@ The current pipeline shows some minor shortcomings:
 
 - The detection of dashed lines is not as stable as the one of solid lines. The reasons are that the approach uses the longest line as reference and as the car is moving along the dashed line, the reference is continuously changing.
 
-- This approach takes just straight lines into consideration. So, for highway drives this is satisfying solution
+- This approach takes just straight lines into consideration. So, for highway drives this is satisfying solution.
 
 Suggest possible improvements
 ---
